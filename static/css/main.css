@@ -213,22 +213,23 @@ main {
 
 .socials-page {
     width: 100%;
-    max-width: 730px;
+    max-width: 1050px;
 
-    margin: 110px auto 120px;
+    margin: 120px auto 140px;
 }
 
 
 /* Intro */
 
 .socials-intro {
-    margin: 0 0 28px;
+    margin: 0 0 45px;
+    max-width: 800px;
 
     text-align: center;
 
     color: var(--text);
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 
@@ -238,7 +239,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 14px;
+    gap: 20px;
 }
 
 
@@ -247,9 +248,8 @@ main {
 .social-card {
     position: relative;
 
-    min-height: 146px;
-
-    padding: 20px;
+    min-height: 170px;
+    padding: 25px;
 
     display: flex;
     flex-direction: column;
@@ -273,20 +273,20 @@ main {
 /* Icon */
 
 .social-icon {
-    width: 41px;
-    height: 41px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
     background-color: #313244;
 
     color: var(--highlight);
 
-    font-size: 18px;
+    font-size: 21px;
 
     transition:
         background-color 0.2s ease,
@@ -297,11 +297,11 @@ main {
 /* Card text */
 
 .social-info h2 {
-    margin: 0 0 6px;
+    margin: 0 0 8px;
 
     color: var(--title);
 
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -311,7 +311,7 @@ main {
 
     color: var(--text);
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -320,12 +320,12 @@ main {
 .social-external {
     position: absolute;
 
-    top: 20px;
-    right: 18px;
+    top: 28px;
+    right: 25px;
 
     color: var(--text);
 
-    font-size: 11px;
+    font-size: 12px;
 
     opacity: 0;
 
