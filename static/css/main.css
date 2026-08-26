@@ -115,6 +115,31 @@ main {
     color: var(--highlight);
 }
 
+
+.terminal-cursor {
+    display: inline-block;
+
+    width: 8px;
+    height: 18px;
+
+    background-color: var(--highlight);
+
+    margin-left: 4px;
+
+    animation: terminal-blink 1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
 /* =========================
    HERO
    ========================= */
