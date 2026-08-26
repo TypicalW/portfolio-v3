@@ -599,12 +599,11 @@ main {
 
 /* Project grid */
 
-.project-grid {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
-
 
 /* Main card */
 
@@ -637,6 +636,14 @@ main {
     justify-content: center;
 
     background-color: #a6b3bf;
+}
+
+.projects-title {
+    color: var(--title);
+}
+
+.projects-title i {
+    color: var(--highlight);
 }
 
 
@@ -1257,4 +1264,5 @@ main {
     .section-header h2 {
         font-size: 23px;
     }
+    
 }
