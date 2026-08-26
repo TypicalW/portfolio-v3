@@ -58,6 +58,17 @@ main {
 
 
 /* =========================
+   SHARED CONTAINER
+   ========================= */
+
+.container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+/* =========================
    NAVBAR
    ========================= */
 
@@ -66,10 +77,6 @@ main {
 }
 
 .navbar {
-    width: calc(100% - 48px);
-    max-width: 1550px;
-
-    margin: 0 auto;
     padding: 28px 0;
 
     display: flex;
@@ -146,9 +153,6 @@ main {
    ========================= */
 
 .site-footer {
-    width: calc(100% - 32px);
-    max-width: 1500px;
-
     margin: 80px auto 24px;
     padding: 25px 28px;
 
@@ -253,8 +257,11 @@ main {
 
 @media (max-width: 600px) {
 
-    .navbar {
+    .container {
         width: calc(100% - 32px);
+    }
+
+    .navbar {
         padding: 20px 0;
     }
 
@@ -274,8 +281,6 @@ main {
     /* Footer */
 
     .site-footer {
-        width: calc(100% - 32px);
-
         margin: 60px auto 20px;
         padding: 16px;
 
