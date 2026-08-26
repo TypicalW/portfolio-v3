@@ -170,7 +170,7 @@ main {
     font-size: 14px;
     text-decoration: none;
 
-    transition: color 0.2s ease;
+    transition: color 0.5s ease;
 }
 
 .hero-links a:hover {
@@ -238,12 +238,24 @@ main {
     text-decoration: none;
     white-space: nowrap;
 
-    transition: color 0.2s ease;
+    transition: color 0.5s ease;
 }
 
 .footer-right a:hover,
 .footer-right a:hover span,
 .footer-right a:hover i {
+    color: var(--highlight);
+}
+
+.footer-time,
+.footer-views {
+    color: var(--text);
+    transition: color 0.2s ease;
+}
+
+.footer-time:hover,
+.footer-time:hover span,
+.footer-views:hover {
     color: var(--highlight);
 }
 
@@ -289,6 +301,74 @@ main {
 .clock-hand.minute {
     height: 5px;
     transform: translateX(-50%) rotate(120deg);
+}
+
+
+/* =========================
+    HERO TITLE ANIMATION
+    ======================== */
+.hero-name {
+    color: var(--highlight);
+}
+
+.first-name {
+    display: inline-flex;
+    align-items: center;
+}
+
+.name-h {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition:
+        width 0.3s ease,
+        opacity 0.2s ease;
+}
+
+.name-a {
+    position: relative;
+    display: inline-block;
+}
+
+.a-upper,
+.a-lower {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+}
+
+.a-lower {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.name-space {
+    display: inline-block;
+    width: 0;
+
+    transition: width 0.3s ease;
+}
+
+
+/* Hover */
+
+.hero-name:hover .name-h {
+    width: 1ch;
+    opacity: 1;
+}
+
+.hero-name:hover .a-upper {
+    opacity: 0;
+}
+
+.hero-name:hover .a-lower {
+    opacity: 1;
+}
+
+.hero-name:hover .name-space {
+    width: 0.5ch;
 }
 
 
