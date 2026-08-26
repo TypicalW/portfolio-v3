@@ -13,6 +13,7 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/main.css') }}"
     >
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -23,7 +24,7 @@
 
     <!-- Navigation -->
     <header class="site-header">
-        <nav class="navbar">
+        <nav class="navbar container">
 
             <div class="navbar-logo">
                 <a href="/" class="home-symbol">~</a>
@@ -48,32 +49,44 @@
 
 
     <!-- Footer -->
-   <footer class="site-footer">
+    <footer class="site-footer container">
 
         <div class="footer-left">
             <p>© 2026 Ashmit Mishra</p>
         </div>
+
         <div class="footer-right">
+
             <span class="footer-time">
                 <span class="clock-icon">
                     <span class="clock-hand hour"></span>
                     <span class="clock-hand minute"></span>
                 </span>
+
                 <span>0:00:00</span>
             </span>
+
             <span class="footer-views">
                 0 views
             </span>
+
             <a href="#" target="_blank" aria-label="GitHub">
+                <span>Github</span>
                 <i class="fa-brands fa-github"></i>
             </a>
+
             <a href="#" target="_blank" aria-label="LinkedIn">
+                <span>Linkedin</span>
                 <i class="fa-brands fa-linkedin"></i>
             </a>
+
             <a href="#" target="_blank" aria-label="Codeforces">
+                <span>CodeForces</span>
                 <i class="fa-solid fa-code"></i>
             </a>
+
         </div>
+
     </footer>
 
 </body>
