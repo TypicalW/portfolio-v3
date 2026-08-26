@@ -398,50 +398,696 @@ main {
 
 
 /* =========================
+   FEATURED PROJECTS
+   ========================= */
+
+.featured-projects {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+/* Section heading */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    margin: 0;
+
+    color: var(--title);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section-star {
+    color: var(--highlight);
+    font-size: 50px;
+    -webkit-text-stroke: 1.5px var(--highlight);
+}
+
+.view-all {
+    color: var(--highlight);
+    font-size: 14px;
+    text-decoration: none;
+
+    border-bottom: 1px dashed var(--highlight);
+
+    transition: opacity 0.2s ease;
+}
+
+.view-all:hover {
+    opacity: 0.7;
+}
+
+
+/* Project grid */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* Main card */
+
+.project-card {
+    overflow: hidden;
+
+    background-color: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition: border-color 0.25s ease;
+}
+
+.project-card:hover {
+    border-color: var(--highlight);
+}
+
+/* =========================
+   PROJECT PREVIEW
+   ========================= */
+
+.project-preview {
+    height: 305px;
+
+    padding: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #a6b3bf;
+}
+
+
+/* Fake repository window */
+
+.project-window {
+    width: 100%;
+    height: 220px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #2a2b38;
+
+    border-radius: 9px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-window {
+    transform: scale(1.04);
+}
+
+/* Window top */
+
+.window-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.window-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.window-dots span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+    background-color: #f38ba0;
+}
+
+.window-dots span:nth-child(2) {
+    background-color: #f9e2af;
+}
+
+.window-dots span:nth-child(3) {
+    background-color: #a6e3a1;
+}
+
+.project-stars {
+    color: var(--title);
+    font-size: 16px;
+}
+
+
+/* Repository name */
+
+.project-window-title {
+    margin-top: 18px;
+
+    font-size: 15px;
+}
+
+.project-owner {
+    color: var(--highlight);
+}
+
+.project-slash {
+    margin: 0 8px;
+    color: var(--text);
+}
+
+.project-repo {
+    color: #a6e3a1;
+}
+
+
+/* Preview description */
+
+.project-window-description {
+    max-width: 90%;
+
+    margin-top: 18px;
+
+    color: var(--title);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Bottom of preview */
+
+.project-window-bottom {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #6c7086;
+    font-size: 12px;
+}
+
+.project-contributors {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   PROJECT INFORMATION
+   ========================= */
+
+.project-info {
+    padding: 22px 20px 20px;
+}
+
+.project-info h3 {
+    margin: 0 0 12px;
+
+    color: var(--title);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.project-info p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    min-height: 42px;
+}
+
+
+/* Tags */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+
+    background-color: #313244;
+
+    border-radius: 4px;
+
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* =========================
+   STATS GRID
+   ========================= */
+
+.stats-grid {
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+
+/* =========================
+   GENERIC CARD
+   ========================= */
+
+.info-card {
+    position: relative;
+
+    min-height: 240px;
+    padding: 16px;
+
+    background-color: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition: border-color 0.2s ease;
+}
+
+.info-card:hover {
+    border-color: var(--highlight);
+}
+
+
+/* =========================
+   CARD HEADER
+   ========================= */
+
+.card-header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.card-title i {
+    color: var(--highlight);
+    font-size: 13px;
+}
+
+.card-title h3 {
+    margin: 0;
+
+    color: var(--title);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-link {
+    margin-left: auto;
+
+    color: var(--highlight);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LEETCODE
+   ========================= */
+
+.leetcode-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.leetcode-heatmap {
+    display: grid;
+
+    grid-template-columns: repeat(10, 1fr);
+
+    gap: 4px;
+
+    margin-top: 10px;
+}
+
+.heat {
+    width: 100%;
+    aspect-ratio: 1;
+
+    border-radius: 2px;
+}
+
+.heat-0 {
+    background-color: #313244;
+}
+
+.heat-1 {
+    background-color: #45475a;
+}
+
+.heat-2 {
+    background-color: #c26d8b;
+}
+
+.heat-3 {
+    background-color: var(--highlight);
+}
+
+.leetcode-stats {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.leetcode-stats > div,
+.atcoder-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-value {
+    color: var(--title);
+    font-size: 14px;
+}
+
+.stat-label {
+    color: var(--text);
+    font-size: 11px;
+}
+
+
+/* =========================
+   ATCODER
+   ========================= */
+
+.atcoder-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-display {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-number {
+    color: var(--highlight);
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.rating-label {
+    margin-top: 5px;
+
+    color: var(--text);
+    font-size: 11px;
+}
+
+.atcoder-stats {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+
+/* =========================
+   LOCATION
+   ========================= */
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-pin {
+    margin-left: auto;
+
+    color: var(--highlight);
+    font-size: 10px;
+}
+
+.map-placeholder {
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2px;
+
+    background-color: #181825;
+
+    border-radius: 6px;
+
+    color: #45475a;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.location-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: auto;
+    padding-top: 10px;
+
+    color: var(--text);
+    font-size: 11px;
+}
+
+.location-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* =========================
+   COUNTER
+   ========================= */
+
+.counter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info-icon {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+.counter-number {
+    color: var(--highlight);
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.counter-button {
+    margin-top: 10px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--highlight);
+    color: #11111b;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+}
+
+.counter-button:hover {
+    transform: translateY(-2px);
+}
+
+.counter-text {
+    margin: 18px 0 0;
+
+    color: var(--text);
+    font-size: 11px;
+}
+
+
+/* =========================
+   RECENT COMMITS
+   ========================= */
+
+.commits-card {
+    grid-column: span 2;
+
+    min-height: 195px;
+}
+
+.commit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.commit-row {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--text);
+    font-size: 12px;
+}
+
+.commit-add {
+    color: #a6e3a1;
+    white-space: nowrap;
+}
+
+.github-commits {
+    display: inline-block;
+
+    margin-top: 16px;
+
+    color: var(--highlight);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.github-commits:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   CONTEST HISTORY
+   ========================= */
+
+.contests-card {
+    grid-column: span 2;
+
+    min-height: 195px;
+}
+
+.contest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.contest-row {
+    display: grid;
+
+    grid-template-columns: 1fr 70px 110px;
+
+    gap: 15px;
+
+    color: var(--text);
+    font-size: 11px;
+}
+
+.contest-row span:nth-child(2),
+.contest-row span:nth-child(3) {
+    text-align: right;
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 
 @media (max-width: 600px) {
-
     .container {
         width: calc(100% - 32px);
     }
-
     .navbar {
         padding: 20px 0;
     }
-
     .navbar-links {
         gap: 16px;
     }
-
     .navbar-links a {
         font-size: 14px;
     }
-
     .navbar-logo {
         font-size: 16px;
     }
-
-
     /* Footer */
-
     .site-footer {
         margin: 60px auto 20px;
         padding: 16px;
-
         align-items: flex-start;
-
         flex-wrap: wrap;
         gap: 14px 20px;
     }
-
     .footer-left {
         width: 100%;
     }
-
     .footer-right {
         width: 100%;
         justify-content: flex-start;
+    }
+}
+
+@media (max-width: 800px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-preview {
+        height: 280px;
+        padding: 30px;
+    }
+    .project-window {
+        height: 210px;
+    }
+    .section-header h2 {
+        font-size: 23px;
     }
 }

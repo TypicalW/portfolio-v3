@@ -53,9 +53,422 @@
 
         <span class="link-separator">|</span>
 
-        <a href="/about/">
+        <a href="{{ url_for('about')}}">
             More about me →
         </a>
+
+    </div>
+</section>
+<section class="featured-projects container">
+
+    <div class="section-header">
+        <h2>
+            <span class="section-star">☆</span>
+            Featured Projects
+        </h2>
+
+        <a href="{{ url_for('projects') }}" class="view-all">
+            View all →
+        </a>
+    </div>
+
+
+    <div class="project-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card">
+
+            <div class="project-preview">
+
+                <div class="project-window">
+
+                    <div class="window-top">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="project-stars">★</span>
+                    </div>
+
+                    <div class="project-window-title">
+                        <span class="project-owner">YourName</span>
+                        <span class="project-slash">/</span>
+                        <span class="project-repo">project-name</span>
+                    </div>
+
+                    <p class="project-window-description">
+                        Short description of what your project does.
+                    </p>
+
+                    <div class="project-window-bottom">
+                        <div class="project-contributors">
+                            <!-- Contributor avatars can go here -->
+                        </div>
+
+                        <span>0 Contributors</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <h3>Your Project Name</h3>
+
+                <p>
+                    A longer description explaining what the project does,
+                    why you built it, and what makes it interesting.
+                </p>
+
+                <div class="project-tags">
+                    <span>golang</span>
+                    <span>python</span>
+                    <span>docker</span>
+                    <span>postgresql</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 2 -->
+        <article class="project-card">
+
+            <div class="project-preview">
+
+                <div class="project-window">
+
+                    <div class="window-top">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="project-stars">★</span>
+                    </div>
+
+                    <div class="project-window-title">
+                        <span class="project-owner">YourName</span>
+                        <span class="project-slash">/</span>
+                        <span class="project-repo">another-project</span>
+                    </div>
+
+                    <p class="project-window-description">
+                        Short description of what your project does.
+                    </p>
+
+                    <div class="project-window-bottom">
+                        <div class="project-contributors">
+                            <!-- Contributor avatars can go here -->
+                        </div>
+
+                        <span>0 Contributors</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <h3>Another Project</h3>
+
+                <p>
+                    A longer description explaining the project's purpose,
+                    architecture, and important technologies.
+                </p>
+
+                <div class="project-tags">
+                    <span>golang</span>
+                    <span>gin</span>
+                    <span>docker</span>
+                    <span>redis</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<section class="stats-grid container">
+
+    <!-- LeetCode -->
+    <div class="info-card leetcode-card">
+
+        <div class="card-header">
+            <div class="card-title">
+                <i class="fa-solid fa-code"></i>
+                <h3>LeetCode</h3>
+            </div>
+
+            <a href="#" target="_blank" class="card-link">
+                ↗
+            </a>
+        </div>
+
+        <!-- Test heatmap -->
+        <div class="leetcode-heatmap">
+
+            <span class="heat heat-0"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-0"></span>
+
+            <span class="heat heat-1"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-1"></span>
+
+            <span class="heat heat-0"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-2"></span>
+
+            <span class="heat heat-2"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-1"></span>
+            <span class="heat heat-3"></span>
+            <span class="heat heat-0"></span>
+            <span class="heat heat-2"></span>
+            <span class="heat heat-1"></span>
+
+        </div>
+
+        <div class="leetcode-stats">
+
+            <div>
+                <span class="stat-value">612</span>
+                <span class="stat-label">Solved</span>
+            </div>
+
+            <div>
+                <span class="stat-value">1842</span>
+                <span class="stat-label">Rating</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AtCoder -->
+    <div class="info-card atcoder-card">
+
+        <div class="card-header">
+            <div class="card-title">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>AtCoder</h3>
+            </div>
+
+            <a href="#" target="_blank" class="card-link">
+                ↗
+            </a>
+        </div>
+
+        <div class="rating-display">
+            <span class="rating-number">1842</span>
+            <span class="rating-label">Current Rating</span>
+        </div>
+
+        <div class="atcoder-stats">
+
+            <div>
+                <span class="stat-value">1921</span>
+                <span class="stat-label">Peak Rating</span>
+            </div>
+
+            <div>
+                <span class="stat-value">#2,341</span>
+                <span class="stat-label">Global Rank</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Currently Based In -->
+    <div class="info-card location-card">
+
+        <div class="card-header">
+            <div class="card-title">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Currently Based In</h3>
+            </div>
+
+            <span class="location-pin">●</span>
+        </div>
+
+        <div class="map-placeholder">
+            <span>INDIA</span>
+        </div>
+
+        <div class="location-footer">
+
+            <span>India</span>
+
+            <span class="location-time">
+                <span class="clock-icon">
+                    <span class="clock-hand hour"></span>
+                    <span class="clock-hand minute"></span>
+                </span>
+
+                23:14:52
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Counter -->
+    <div class="info-card counter-card">
+
+        <div class="card-info-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div class="counter-number">
+            826,967
+        </div>
+
+        <button class="counter-button">
+            CLICK ME
+        </button>
+
+        <p class="counter-text">
+            you've clicked 223 times
+        </p>
+
+    </div>
+
+
+    <!-- Recent Commits -->
+    <div class="info-card commits-card">
+
+        <div class="card-header">
+
+            <div class="card-title">
+                <i class="fa-solid fa-code-commit"></i>
+                <h3>Recent Commits</h3>
+            </div>
+
+            <a href="{{ socials.github }}" target="_blank" class="card-link">
+                [info]
+            </a>
+
+        </div>
+
+        <div class="commit-list">
+
+            <div class="commit-row">
+                <span>portfolio: Added project cards</span>
+                <span class="commit-add">+42 / -8</span>
+            </div>
+
+            <div class="commit-row">
+                <span>portfolio: Improved responsive layout</span>
+                <span class="commit-add">+126 / -17</span>
+            </div>
+
+            <div class="commit-row">
+                <span>portfolio: Added footer links</span>
+                <span class="commit-add">+95 / -0</span>
+            </div>
+
+            <div class="commit-row">
+                <span>portfolio: Updated README</span>
+                <span class="commit-add">+23 / -2</span>
+            </div>
+
+        </div>
+
+        <a
+            href="{{ socials.github }}"
+            target="_blank"
+            class="github-commits"
+        >
+            View on GitHub
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+    </div>
+
+
+    <!-- Contest History -->
+    <div class="info-card contests-card">
+
+        <div class="card-header">
+
+            <div class="card-title">
+                <i class="fa-solid fa-ranking-star"></i>
+                <h3>Contest History</h3>
+            </div>
+
+            <a href="#" target="_blank" class="card-link">
+                ↗
+            </a>
+
+        </div>
+
+        <div class="contest-list">
+
+            <div class="contest-row">
+                <span>LeetCode Weekly</span>
+                <span>1842</span>
+                <span>Aug 24, 2026</span>
+            </div>
+
+            <div class="contest-row">
+                <span>AtCoder ABC</span>
+                <span>1921</span>
+                <span>Aug 17, 2026</span>
+            </div>
+
+            <div class="contest-row">
+                <span>LeetCode Biweekly</span>
+                <span>1810</span>
+                <span>Aug 10, 2026</span>
+            </div>
+
+            <div class="contest-row">
+                <span>AtCoder ARC</span>
+                <span>1876</span>
+                <span>Aug 03, 2026</span>
+            </div>
+
+        </div>
 
     </div>
 
