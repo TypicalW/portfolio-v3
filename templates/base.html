@@ -7,7 +7,11 @@
 
     <title>{% block title %}Ashmit Mishra{% endblock %}</title>
 
-    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='images/favicon.png') }}"
+    >
 
     <link
         rel="stylesheet"
@@ -34,7 +38,14 @@
             <div class="navbar-links">
                 <a href="/about/">About</a>
                 <a href="/projects/">Projects</a>
-                <a href="/resume/" target="_blank">Resume</a>
+
+                <a
+                    href="{{ url_for('static', filename='documents/resume.pdf') }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Resume
+                </a>
             </div>
 
         </nav>
@@ -57,30 +68,56 @@
 
         <div class="footer-right">
 
+            <!-- Time -->
             <span class="footer-time">
+
                 <span class="clock-icon">
                     <span class="clock-hand hour"></span>
                     <span class="clock-hand minute"></span>
                 </span>
 
                 <span>0:00:00</span>
+
             </span>
 
+
+            <!-- Views -->
             <span class="footer-views">
                 0 views
             </span>
 
-            <a href="#" target="_blank" aria-label="GitHub">
+
+            <!-- GitHub -->
+            <a
+                href="{{ socials.github }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
                 <span>Github</span>
                 <i class="fa-brands fa-github"></i>
             </a>
 
-            <a href="#" target="_blank" aria-label="LinkedIn">
+
+            <!-- LinkedIn -->
+            <a
+                href="{{ socials.linkedin }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
                 <span>Linkedin</span>
                 <i class="fa-brands fa-linkedin"></i>
             </a>
 
-            <a href="#" target="_blank" aria-label="Codeforces">
+
+            <!-- Codeforces -->
+            <a
+                href="{{ socials.codeforces }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Codeforces"
+            >
                 <span>CodeForces</span>
                 <i class="fa-solid fa-code"></i>
             </a>
