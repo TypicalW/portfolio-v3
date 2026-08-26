@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Socials — Ashmit Mishra{% endblock %}
+
+{% block content %}
+
+<section class="socials-page">
+
+    <p class="socials-intro">
+        Find me across the web. Let's build something together.
+    </p>
+
+    <div class="socials-grid">
+
+        <!-- GitHub -->
+        <a
+            href="{{ socials.github }}"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="social-icon">
+                <i class="fa-brands fa-github"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>GitHub</h2>
+                <p>@TypicalW</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+
+        <!-- LinkedIn -->
+        <a
+            href="{{ socials.linkedin }}"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="social-icon">
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>LinkedIn</h2>
+                <p>Ashmit Mishra</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+
+        <!-- X -->
+        <a
+            href="{{ socials.x }}"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="social-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>X</h2>
+                <p>@Typical__W</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+
+        <!-- Codeforces -->
+        <a
+            href="{{ socials.codeforces }}"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="social-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>Codeforces</h2>
+                <p>@TypicalW</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+
+        <!-- LeetCode -->
+        <a
+            href="{{ socials.leetcode }}"
+            class="social-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="social-icon">
+                <i class="fa-solid fa-terminal"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>LeetCode</h2>
+                <p>@TypicalW</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+
+        <!-- Email -->
+        <a
+            href="mailto:{{ contact.email }}"
+            class="social-card"
+        >
+            <div class="social-icon">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="social-info">
+                <h2>Email</h2>
+                <p>{{ contact.email }}</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square social-external"></i>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

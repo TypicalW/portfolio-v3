@@ -207,6 +207,157 @@ main {
     font-size: 14px;
 }
 
+/* =========================
+   SOCIALS PAGE
+   ========================= */
+
+.socials-page {
+    width: 100%;
+    max-width: 730px;
+
+    margin: 110px auto 120px;
+}
+
+
+/* Intro */
+
+.socials-intro {
+    margin: 0 0 28px;
+
+    text-align: center;
+
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Grid */
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* Card */
+
+.social-card {
+    position: relative;
+
+    min-height: 146px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Icon */
+
+.social-icon {
+    width: 41px;
+    height: 41px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background-color: #313244;
+
+    color: var(--highlight);
+
+    font-size: 18px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Card text */
+
+.social-info h2 {
+    margin: 0 0 6px;
+
+    color: var(--title);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.social-info p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* External-link icon */
+
+.social-external {
+    position: absolute;
+
+    top: 20px;
+    right: 18px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Hover */
+
+.social-card:hover {
+    border-color: var(--highlight);
+    background-color: rgba(243, 139, 160, 0.025);
+}
+
+
+.social-card:hover .social-icon {
+    background-color: rgba(243, 139, 160, 0.12);
+    color: var(--highlight);
+}
+
+
+.social-card:hover h2 {
+    color: var(--highlight);
+}
+
+
+.social-card:hover .social-external {
+    color: var(--highlight);
+    opacity: 1;
+}
 
 /* =========================
    FOOTER
@@ -1073,6 +1224,22 @@ main {
     .footer-right {
         width: 100%;
         justify-content: flex-start;
+    }
+
+        /* Socials */
+
+    .socials-page {
+        width: calc(100% - 32px);
+
+        margin: 70px auto 80px;
+    }
+
+    .socials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card {
+        min-height: 130px;
     }
 }
 

@@ -12,6 +12,11 @@ SOCIALS = {
     "linkedin": "https://www.linkedin.com/in/ashmitmishra/",
     "x": "https://x.com/Typical__W",
     "codeforces": "https://codeforces.com/profile/TypicalW",
+    "leetcode": "https://leetcode.com/u/TypicalW/"
+}
+
+CONTACT = {
+    "contact": "ashmit1665@gmail.com"
 }
 
 
@@ -20,6 +25,7 @@ SOCIALS = {
 def inject_globals():
     return {
         "socials": SOCIALS,
+        "contact":CONTACT
     }
 
 
@@ -38,6 +44,9 @@ def about():
 def projects():
     return render_template("projects.html")
 
+@app.route("/socials")
+def socials():
+    return render_template("socials.html")
 
 
 if __name__ == "__main__":
