@@ -206,6 +206,79 @@ main {
     color: var(--border);
     font-size: 14px;
 }
+/* ========================
+    ABOUT ME PAGE
+    ======================= */
+
+.about-page {
+    margin-top: 70px;
+} 
+
+.about-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 10 0 30px;
+
+    color: var(--title);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.about-title img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+
+/* About introduction */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* Photo */
+
+.about-photo {
+    width: 100%;
+}
+
+.about-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+
+/* Text */
+
+.about-text {
+    max-width: 700px;
+}
+
+.about-text p {
+    margin: 0 0 20px;
+
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-text p:first-child {
+    color: var(--title);
+    font-size: 20px;
+    font-weight: 700;
+}
 
 /* =========================
    SOCIALS PAGE
@@ -597,14 +670,22 @@ main {
 }
 
 
-/* Project grid */
+/* Homepage featured projects */
+
+.featured-projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* Projects page */
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
-
 /* Main card */
 
 .project-card {
@@ -1266,3 +1347,4 @@ main {
     }
     
 }
+

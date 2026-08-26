@@ -1,15 +1,41 @@
 {% extends "base.html" %}
-
-{% block title %}About — Ashmit Mishra{% endblock %}
-
+{% block title %}About Me — Ashmit Mishra{% endblock %}
 {% block content %}
+<div class="container about-page">
+    <h1 class="about-title">
+        <img src="{{ url_for('static', filename='images/favicon.png') }}" alt="">
+        About Me
+    </h1>
 
-<section class="container">
-    <h1>About Me</h1>
+    <section class="about-intro">
 
-    <p>
-        Your about page content here...
-    </p>
-</section>
+        <div class="about-photo">
+            <img
+                src="{{ url_for('static', filename='images/Ashmit1.png') }}"
+                alt="Ashmit Mishra"
+            >
+        </div>
 
+        <div class="about-text">
+            <p>
+                Hey, I'm Ashmit.
+            </p>
+
+            <p>
+                I'm an engineering student and aspiring software engineer
+                who enjoys building things, solving problems, and learning
+                how software works and how various technologies come together
+                to make it happen.
+            </p>
+
+            <p>
+                I'm currently focused on becoming a better programmer by
+                building real projects and exploring areas like backend
+                development, APIs, databases, and systems. I'm also an Open Source 
+                Developer and Competitive Programmer.
+            </p>
+        </div>
+
+    </section>
+</div>
 {% endblock %}
