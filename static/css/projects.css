@@ -1,0 +1,270 @@
+/* =========================
+   PROJECT GRIDS
+   ========================= */
+
+/* Homepage featured projects */
+
+.featured-projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* Projects page */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* =========================
+   PROJECT CARD
+   ========================= */
+
+.project-card {
+    overflow: hidden;
+
+    background-color: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition: border-color 0.25s ease;
+}
+
+.project-card:hover {
+    border-color: var(--highlight);
+}
+
+
+/* =========================
+   PROJECT PREVIEW
+   ========================= */
+
+.project-preview {
+    height: 305px;
+
+    padding: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #a6b3bf;
+}
+
+.projects-title {
+    color: var(--title);
+}
+
+.projects-title i {
+    color: var(--highlight);
+}
+
+
+/* =========================
+   REPOSITORY WINDOW
+   ========================= */
+
+.project-window {
+    width: 100%;
+    height: 220px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #2a2b38;
+
+    border-radius: 9px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-window {
+    transform: scale(1.04);
+}
+
+
+/* Window top */
+
+.window-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.window-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.window-dots span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+    background-color: #f38ba0;
+}
+
+.window-dots span:nth-child(2) {
+    background-color: #f9e2af;
+}
+
+.window-dots span:nth-child(3) {
+    background-color: #a6e3a1;
+}
+
+.project-stars {
+    color: var(--title);
+    font-size: 16px;
+}
+
+
+/* =========================
+   REPOSITORY NAME
+   ========================= */
+
+.project-window-title {
+    margin-top: 18px;
+
+    font-size: 15px;
+}
+
+.project-owner {
+    color: var(--highlight);
+}
+
+.project-slash {
+    margin: 0 8px;
+
+    color: var(--text);
+}
+
+.project-repo {
+    color: #a6e3a1;
+}
+
+
+/* =========================
+   PREVIEW DESCRIPTION
+   ========================= */
+
+.project-window-description {
+    max-width: 90%;
+
+    margin-top: 18px;
+
+    color: var(--title);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   PREVIEW BOTTOM
+   ========================= */
+
+.project-window-bottom {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #6c7086;
+    font-size: 12px;
+}
+
+.project-contributors {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   PROJECT INFORMATION
+   ========================= */
+
+.project-info {
+    padding: 22px 20px 20px;
+}
+
+.project-info h3 {
+    margin: 0 0 12px;
+
+    color: var(--title);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.project-info p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    min-height: 42px;
+}
+
+
+/* =========================
+   PROJECT TAGS
+   ========================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.project-tags span {
+    padding: 5px 9px;
+
+    background-color: #313244;
+
+    border-radius: 4px;
+
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-preview {
+        height: 280px;
+        padding: 30px;
+    }
+
+    .project-window {
+        height: 210px;
+    }
+}

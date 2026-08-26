@@ -1,0 +1,296 @@
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about-page {
+    margin-top: 70px;
+}
+
+
+/* =========================
+   ABOUT TITLE
+   ========================= */
+
+.about-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 10px 0 30px;
+
+    color: var(--title);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.about-title img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   ABOUT INTRO
+   ========================= */
+
+.about-intro {
+    display: grid;
+
+    grid-template-columns: 360px minmax(0, 1fr);
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   PHOTO
+   ========================= */
+
+.about-photo {
+    width: 100%;
+}
+
+.about-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+
+/* =========================
+   ABOUT TEXT
+   ========================= */
+
+.about-text {
+    max-width: 700px;
+}
+
+.about-text p {
+    margin: 0 0 20px;
+
+    color: var(--text);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-text p:first-child {
+    color: var(--title);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+   ========================= */
+
+.about-technologies {
+    margin-top: 50px;
+}
+
+.about-technologies h2 {
+    margin: 0 0 24px;
+
+    color: var(--title);
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TECHNOLOGY GRID
+   ========================= */
+
+.technology-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================
+   TECHNOLOGY CARD
+   ========================= */
+
+.technology-card {
+    min-height: 180px;
+    padding: 22px;
+
+    background-color: #11111b;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.technology-card:hover {
+    border-color: var(--highlight);
+}
+
+
+/* =========================
+   CATEGORY HEADING
+   ========================= */
+
+.technology-card h3 {
+    margin: 0 0 24px;
+
+    color: var(--title);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TECHNOLOGY ICONS
+   ========================= */
+
+.technology-icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   TECHNOLOGY ITEM
+   ========================= */
+
+.technology-item {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: default;
+}
+
+
+/* Logo */
+
+.technology-item i {
+    color: var(--text);
+
+    font-size: 33px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================
+   LOGO HOVER
+   ========================= */
+
+.technology-item:hover i {
+    color: var(--highlight);
+
+    transform: scale(1.15);
+
+    filter: drop-shadow(
+        0 0 6px rgba(243, 139, 160, 0.35)
+    );
+}
+
+
+/* =========================
+   TOOLTIP
+   ========================= */
+
+.technology-item span {
+    position: absolute;
+
+    bottom: calc(100% + 10px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(4px);
+
+    padding: 6px 9px;
+
+    background-color: #2a2b38;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    color: var(--title);
+
+    font-size: 11px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Tooltip arrow */
+
+.technology-item span::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border: 5px solid transparent;
+    border-top-color: #2a2b38;
+}
+
+
+/* Show tooltip */
+
+.technology-item:hover span {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+}

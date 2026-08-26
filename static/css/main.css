@@ -165,7 +165,7 @@ main {
     width: 60%;
     max-width: 800px;
 
-    margin-top: 20px 0;
+    margin-top: 20px;
     margin-bottom: 30px;
 
     color: var(--text);

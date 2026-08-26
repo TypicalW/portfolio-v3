@@ -1,0 +1,171 @@
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    margin: 80px auto 24px;
+    padding: 25px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background-color: #11111b;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+
+/* Left side */
+
+.footer-left {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.footer-left p {
+    margin: 0;
+
+    color: var(--text);
+    font-size: 13px;
+}
+
+
+/* Right side */
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+
+    flex-wrap: wrap;
+}
+.footer-right span {
+    color: var(--text);
+    white-space: nowrap;
+}
+
+
+/* Footer links */
+
+.footer-right a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--text);
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-right a:hover,
+.footer-right a:hover span,
+.footer-right a:hover i {
+    color: var(--highlight);
+}
+
+.footer-time:hover,
+.footer-time:hover span,
+.footer-views:hover {
+    color: var(--highlight);
+}
+
+/* Time & views */
+
+.footer-time,
+.footer-views {
+    color: var(--text);
+
+    transition: color 0.2s ease;
+}
+
+.footer-time:hover,
+.footer-views:hover {
+    color: var(--highlight);
+}
+
+
+/* Clock */
+
+.clock-icon {
+    position: relative;
+
+    width: 14px;
+    height: 14px;
+
+    display: inline-block;
+
+    border: 1px solid var(--text);
+    border-radius: 50%;
+
+    margin-right: 5px;
+}
+
+
+/* Clock hands */
+
+.clock-hand {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+
+    background-color: var(--text);
+
+    transform-origin: bottom center;
+}
+
+
+/* Hour hand */
+
+.clock-hand.hour {
+    height: 4px;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+
+/* Minute hand */
+
+.clock-hand.minute {
+    height: 5px;
+    transform: translate(-50%, -100%) rotate(45deg);
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        justify-content: flex-start;
+    }
+    .site-footer {
+        margin: 60px auto 20px;
+        padding: 16px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+    }
+
+    .footer-left {
+        width: 100%;
+    }
+
+    .footer-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
