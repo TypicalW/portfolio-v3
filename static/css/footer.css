@@ -19,7 +19,9 @@
 }
 
 
-/* Left side */
+/* =========================
+   LEFT SIDE
+   ========================= */
 
 .footer-left {
     display: flex;
@@ -36,7 +38,9 @@
 }
 
 
-/* Right side */
+/* =========================
+   RIGHT SIDE
+   ========================= */
 
 .footer-right {
     display: flex;
@@ -46,13 +50,16 @@
 
     flex-wrap: wrap;
 }
+
 .footer-right span {
     color: var(--text);
     white-space: nowrap;
 }
 
 
-/* Footer links */
+/* =========================
+   FOOTER LINKS
+   ========================= */
 
 .footer-right a {
     display: inline-flex;
@@ -67,35 +74,45 @@
     transition: color 0.2s ease;
 }
 
-
 .footer-right a:hover,
 .footer-right a:hover span,
 .footer-right a:hover i {
     color: var(--highlight);
 }
 
-.footer-time:hover,
-.footer-time:hover span,
-.footer-views:hover {
+
+/* =========================
+   TIME
+   ========================= */
+
+.footer-time {
     color: var(--highlight);
 }
 
-/* Time & views */
+/* Overrides .footer-right span */
+#user-time {
+    color: var(--highlight);
+}
 
-.footer-time,
+
+/* =========================
+   VIEWS
+   ========================= */
+
 .footer-views {
     color: var(--text);
 
     transition: color 0.2s ease;
 }
 
-.footer-time:hover,
 .footer-views:hover {
     color: var(--highlight);
 }
 
 
-/* Clock */
+/* =========================
+   CLOCK
+   ========================= */
 
 .clock-icon {
     position: relative;
@@ -105,14 +122,16 @@
 
     display: inline-block;
 
-    border: 1px solid var(--text);
+    border: 1px solid var(--highlight);
     border-radius: 50%;
 
     margin-right: 5px;
 }
 
 
-/* Clock hands */
+/* =========================
+   CLOCK HANDS
+   ========================= */
 
 .clock-hand {
     position: absolute;
@@ -122,7 +141,7 @@
 
     width: 1px;
 
-    background-color: var(--text);
+    background-color: var(--highlight);
 
     transform-origin: bottom center;
 }
@@ -132,7 +151,10 @@
 
 .clock-hand.hour {
     height: 4px;
-    transform: translate(-50%, -100%) rotate(0deg);
+
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg);
 }
 
 
@@ -140,22 +162,26 @@
 
 .clock-hand.minute {
     height: 5px;
-    transform: translate(-50%, -100%) rotate(45deg);
+
+    transform:
+        translate(-50%, -100%)
+        rotate(45deg);
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 600px) {
+
     .site-footer {
         flex-direction: column;
         align-items: flex-start;
-    }
 
-    .footer-right {
-        justify-content: flex-start;
-    }
-    .site-footer {
         margin: 60px auto 20px;
         padding: 16px;
-        align-items: flex-start;
+
         flex-wrap: wrap;
         gap: 14px 20px;
     }
