@@ -15,6 +15,9 @@ from app.services.analytics import (
 )
 from app.services.leetcode import get_leetcode_stats
 from app.services.codeforces import get_codeforces_stats
+from app.services.unified_contest import (
+    get_unified_contest_history
+)
 
 app = Flask(__name__)
 
@@ -123,6 +126,27 @@ def time():
         "user_time": get_user_time(visitor_id)
     }
 
+@app.get("/api/contests")
+def unified_contests():
+
+    try:
+
+        contests = get_unified_contest_history()
+
+        return {
+            "contests": contests
+        }
+
+    except Exception as error:
+
+        print(
+            "Unified contest API error:",
+            error
+        )
+
+        return {
+            "error": "Failed to load contest history"
+        }, 500
 
 if __name__ == "__main__":
     app.run(debug=True)
