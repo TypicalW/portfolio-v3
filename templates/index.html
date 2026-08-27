@@ -203,84 +203,71 @@
 
 <section class="stats-grid container">
 
-    <!-- LeetCode -->
-    <div class="info-card leetcode-card">
+<!-- LeetCode -->
+<div class="info-card leetcode-card">
 
-        <div class="card-header">
-            <div class="card-title">
-                <i class="fa-solid fa-code"></i>
-                <h3>LeetCode</h3>
-            </div>
+    <div class="card-header">
 
-            <a href="#" target="_blank" class="card-link">
-                ↗
-            </a>
+        <div class="card-title">
+            <i class="fa-solid fa-code"></i>
+            <h3>LeetCode</h3>
         </div>
 
-        <!-- Test heatmap -->
-        <div class="leetcode-heatmap">
+        <a
+            href="https://leetcode.com/u/TypicalW/"
+            target="_blank"
+            class="card-link"
+        >
+            ↗
+        </a>
 
-            <span class="heat heat-0"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-0"></span>
+    </div>
 
-            <span class="heat heat-1"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-1"></span>
 
-            <span class="heat heat-0"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-2"></span>
+    <!-- Submission Heatmap -->
 
-            <span class="heat heat-2"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-1"></span>
-            <span class="heat heat-3"></span>
-            <span class="heat heat-0"></span>
-            <span class="heat heat-2"></span>
-            <span class="heat heat-1"></span>
+    <div class="leetcode-heatmap">
 
+        {% for day in leetcode_stats.heatmap %}
+
+            <span
+                class="heat heat-{{ day.level }}"
+                title="{{ day.date }} — {{ day.count }} submissions"
+            ></span>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="leetcode-stats">
+
+        <div>
+            <span class="stat-value">
+                {{ leetcode_stats.solved }}
+            </span>
+
+            <span class="stat-label">
+                Solved
+            </span>
         </div>
 
-        <div class="leetcode-stats">
 
-            <div>
-                <span class="stat-value">612</span>
-                <span class="stat-label">Solved</span>
-            </div>
+        <div>
+            <span class="stat-value">
+                {{ leetcode_stats.rating }}
+            </span>
 
-            <div>
-                <span class="stat-value">1842</span>
-                <span class="stat-label">Rating</span>
-            </div>
-
+            <span class="stat-label">
+                Rating
+            </span>
         </div>
 
     </div>
+
+</div> 
 
 
     <!-- AtCoder -->

@@ -13,6 +13,7 @@ from app.services.analytics import (
     record_time,
     get_user_time,
 )
+from app.services.leetcode import get_leetcode_stats
 
 app = Flask(__name__)
 
@@ -43,17 +44,22 @@ def inject_globals():
 
 @app.route("/")
 def home():
+
     recent_commits = get_recent_commits()
 
     record_view()
+
     total_views = get_total_views()
     total_clicks = get_total_clicks()
+
+    leetcode_stats = get_leetcode_stats()
 
     return render_template(
         "index.html",
         recent_commits=recent_commits,
         total_views=total_views,
-        total_clicks=total_clicks
+        total_clicks=total_clicks,
+        leetcode_stats=leetcode_stats
     )
 
 
