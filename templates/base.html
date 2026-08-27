@@ -12,6 +12,13 @@
         type="image/png"
         href="{{ url_for('static', filename='images/favicon.png') }}"
     >
+    <link
+    href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css"
+    rel="stylesheet"
+/>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+
+    
 
     <!-- Old huge chunky CSS file 
         <link
@@ -147,6 +154,7 @@
 
     </footer>
 <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+<script src="{{ url_for('static', filename='js/location.js') }}"></script>
 </body>
 
 </html>
