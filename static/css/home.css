@@ -188,17 +188,6 @@
 }
 
 
-/* Homepage project grid */
-
-.featured-projects .project-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 24px;
-}
-
-
 /* =========================
    STATS GRID
    ========================= */
@@ -576,8 +565,59 @@
     text-align: right;
 }
 
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 800px) {
     .section-header h2 {
         font-size: 23px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        width: 100%;
+    }
+
+    .featured-projects {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .commits-card,
+    .contests-card {
+        grid-column: span 1;
+    }
+
+    .commit-row {
+        flex-wrap: wrap;
+    }
+
+    .commit-row span:first-child {
+        overflow-wrap: anywhere;
+    }
+
+    .contest-row {
+        grid-template-columns: 1fr 60px 90px;
+        gap: 8px;
     }
 }

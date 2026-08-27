@@ -44,6 +44,24 @@
 * {
     box-sizing: border-box;
 }
+ 
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+ 
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+ 
 
 
 /* =========================
@@ -92,9 +110,13 @@ main {
     margin: 0 auto;
 }
 
+
+/* =========================
+   RESPONSIVE CONTAINER
+   ========================= */
+
 @media (max-width: 600px) {
     .container {
         width: calc(100% - 32px);
     }
 }
-

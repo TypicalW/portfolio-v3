@@ -255,17 +255,34 @@
 
 @media (max-width: 800px) {
 
-    .project-grid,
+    .featured-projects .project-grid,
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
     .project-preview {
-        height: 280px;
-        padding: 30px;
+        height: auto;
+        padding: 24px;
     }
 
     .project-window {
-        height: 210px;
+        height: auto;
+        min-height: 210px;
+    }
+
+    .project-window-description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .project-preview {
+        padding: 18px;
     }
 }

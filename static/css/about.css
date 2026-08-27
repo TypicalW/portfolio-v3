@@ -288,8 +288,38 @@
    RESPONSIVE
    ========================= */
 
+@media (max-width: 800px) {
+ 
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+ 
+    .about-photo {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+ 
+    .about-text {
+        max-width: 100%;
+    }
+}
+ 
 @media (max-width: 600px) {
-
+ 
+    .about-page {
+        margin-top: 40px;
+    }
+ 
+    .about-title {
+        font-size: 22px;
+    }
+ 
+    .about-title img {
+        width: 60px;
+        height: 60px;
+    }
+ 
     .technology-grid {
         grid-template-columns: 1fr;
     }
