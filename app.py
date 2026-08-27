@@ -10,6 +10,8 @@ from app.services.analytics import (
     record_click,
     get_total_clicks,
     get_user_clicks,
+    record_time,
+    get_user_time,
 )
 
 app = Flask(__name__)
@@ -91,6 +93,26 @@ def get_clicks():
     return {
         "user_clicks": get_user_clicks(visitor_id)
     }
+
+@app.route("/api/time", methods=["POST"])
+def time():
+    data = request.get_json()
+
+    visitor_id = data.get("visitor_id")
+    duration_seconds = data.get("duration_seconds")
+
+    if not visitor_id:
+        return {"error": "Missing visitor ID"}, 400
+
+    if not isinstance(duration_seconds, int) or duration_seconds <= 0:
+        return {"error": "Invalid duration"}, 400
+
+    record_time(visitor_id, duration_seconds)
+
+    return {
+        "user_time": get_user_time(visitor_id)
+    }
+
 
 if __name__ == "__main__":
     app.run(debug=True)

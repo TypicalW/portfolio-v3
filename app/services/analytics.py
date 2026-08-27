@@ -86,3 +86,35 @@ def get_user_clicks(visitor_id):
     )
 
     return response.count or 0
+
+
+def record_time(visitor_id, duration_seconds):
+    response = (
+        supabase
+        .table("analytics_events")
+        .insert({
+            "event_type": "time",
+            "visitor_id": visitor_id,
+            "duration_seconds": duration_seconds,
+        })
+        .execute()
+    )
+
+    return response
+
+
+def get_user_time(visitor_id):
+    response = (
+        supabase
+        .table("analytics_events")
+        .select("duration_seconds")
+        .eq("event_type", "time")
+        .eq("visitor_id", visitor_id)
+        .execute()
+    )
+
+    return sum(
+        event["duration_seconds"]
+        for event in response.data
+        if event["duration_seconds"] is not None
+    )
