@@ -19,49 +19,79 @@ HEADERS = {
 }
 
 
-CACHE_DURATION = 600  # 10 minutes
+# =========================
+# CACHE
+# =========================
 
-_cached_commits = None
-_cache_time = 0
+_commit_cache = {
+    "data": None,
+    "timestamp": 0,
+}
+
+CACHE_DURATION = 600  # 10 minutes
 
 
 def get_recent_commits(limit=4):
-    global _cached_commits, _cache_time
 
-    current_time = time.time()
+    now = time.time()
 
-    # Return cached data if it is still valid
+    # =========================
+    # RETURN VALID CACHE
+    # =========================
+
     if (
-        _cached_commits is not None
-        and current_time - _cache_time < CACHE_DURATION
+        _commit_cache["data"] is not None
+        and now - _commit_cache["timestamp"] < CACHE_DURATION
     ):
-        return _cached_commits[:limit]
+        return _commit_cache["data"][:limit]
 
-    response = requests.get(
-        KATIB_API,
-        params={
-            "username": GITHUB_USERNAME,
-            "limit": limit,
-        },
-        headers=HEADERS,
-        timeout=10,
-    )
 
-    response.raise_for_status()
+    # =========================
+    # FETCH FROM KATIB
+    # =========================
 
-    data = response.json()
+    try:
 
-    commits = []
+        response = requests.get(
+            KATIB_API,
+            params={
+                "username": GITHUB_USERNAME,
+                "limit": limit,
+            },
+            headers=HEADERS,
+            timeout=5,
+        )
 
-    for commit in data.get("commits", []):
-        commits.append({
-            "repo": commit["repo"],
-            "message": commit["messageHeadline"],
-            "additions": commit["additions"],
-            "deletions": commit["deletions"],
-        })
+        response.raise_for_status()
 
-    _cached_commits = commits
-    _cache_time = current_time
+        data = response.json()
 
-    return commits[:limit]
+        commits = data.get("commits", [])
+
+        # =========================
+        # UPDATE CACHE
+        # =========================
+
+        _commit_cache["data"] = commits
+        _commit_cache["timestamp"] = now
+
+        return commits[:limit]
+
+    # =========================
+    # FAILSAFE
+    # =========================
+
+    except requests.RequestException as error:
+
+        print(f"GitHub/Katib request failed: {error}")
+
+        # Return stale cache if available
+        if _commit_cache["data"] is not None:
+            print("Using cached GitHub commit data.")
+
+            return _commit_cache["data"][:limit]
+
+        # No cache available
+        print("No cached GitHub commit data available.")
+
+        return []

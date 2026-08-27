@@ -361,15 +361,19 @@
         </div>
 
         <div class="counter-number">
-            826,967
+            {{ total_clicks }}
         </div>
 
-        <button class="counter-button">
+        <button class="counter-button"
+        id="click-button"
+        >
             CLICK ME
         </button>
 
         <p class="counter-text">
-            you've clicked 223 times
+            You've clicked
+            <span id="user-clicks">0</span>
+            times
         </p>
 
     </div>
