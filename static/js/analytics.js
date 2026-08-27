@@ -8,11 +8,53 @@ function getVisitorId() {
 
     return visitorId;
 }
-const clickButton = document.getElementById("click-button");
+
+
+async function loadUserClicks() {
+
+    const userCounter =
+        document.getElementById("user-clicks");
+
+    if (!userCounter) {
+        return;
+    }
+
+    try {
+
+        const visitorId = getVisitorId();
+
+        const response = await fetch(
+            `/api/clicks?visitor_id=${encodeURIComponent(visitorId)}`
+        );
+
+        if (!response.ok) {
+            return;
+        }
+
+        const data = await response.json();
+
+        userCounter.textContent = data.user_clicks;
+
+    } catch (error) {
+
+        console.error(
+            "Failed to load click count:",
+            error
+        );
+
+    }
+}
+
+
+const clickButton =
+    document.getElementById("click-button");
 
 if (clickButton) {
+
     clickButton.addEventListener("click", async () => {
+
         try {
+
             const response = await fetch("/api/click", {
                 method: "POST",
                 headers: {
@@ -29,13 +71,31 @@ if (clickButton) {
 
             const data = await response.json();
 
-            const counter = document.querySelector(".counter-number");
+            const globalCounter =
+                document.getElementById("global-clicks");
 
-            if (counter) {
-                counter.textContent = data.clicks;
+            const userCounter =
+                document.getElementById("user-clicks");
+
+            if (globalCounter) {
+                globalCounter.textContent = data.clicks;
             }
+
+            if (userCounter) {
+                userCounter.textContent = data.user_clicks;
+            }
+
         } catch (error) {
-            console.error("Failed to record click:", error);
+
+            console.error(
+                "Failed to record click:",
+                error
+            );
+
         }
+
     });
 }
+
+
+loadUserClicks();

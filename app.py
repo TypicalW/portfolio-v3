@@ -81,5 +81,16 @@ def click():
         "user_clicks": get_user_clicks(visitor_id)
     }
 
+@app.route("/api/clicks", methods=["GET"])
+def get_clicks():
+    visitor_id = request.args.get("visitor_id")
+
+    if not visitor_id:
+        return {"error": "Missing visitor ID"}, 400
+
+    return {
+        "user_clicks": get_user_clicks(visitor_id)
+    }
+
 if __name__ == "__main__":
     app.run(debug=True)

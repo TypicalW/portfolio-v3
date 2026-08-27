@@ -360,7 +360,8 @@
             <i class="fa-solid fa-circle-info"></i>
         </div>
 
-        <div class="counter-number">
+        <div class="counter-number"
+        id="global-clicks">
             {{ total_clicks }}
         </div>
 
@@ -401,7 +402,7 @@
 
         <div class="commit-row">
             <span>
-                {{ commit.repo }}: {{ commit.message }}
+                {{ commit.repo }}: {{ commit.messageHeadline }}
             </span>
 
             <span class="commit-add">
