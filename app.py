@@ -1,7 +1,8 @@
 from flask import (
     Flask,
-    render_template
+    render_template,
 )
+from app.services.github import get_recent_commits
 
 app = Flask(__name__)
 
@@ -32,7 +33,12 @@ def inject_globals():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    recent_commits = get_recent_commits()
+
+    return render_template(
+        "index.html",
+        recent_commits=recent_commits
+    )
 
 
 @app.route("/about/")
