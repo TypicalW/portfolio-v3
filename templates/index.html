@@ -270,42 +270,65 @@
 </div> 
 
 
-    <!-- AtCoder -->
+    <!-- CodeFores -->
+    <!-- Codeforces -->
     <div class="info-card atcoder-card">
-
         <div class="card-header">
             <div class="card-title">
                 <i class="fa-solid fa-chart-line"></i>
-                <h3>AtCoder</h3>
+                <h3>Codeforces</h3>
             </div>
-
-            <a href="#" target="_blank" class="card-link">
+            <a
+                href="https://codeforces.com/profile/TypicalW"
+                target="_blank"
+                class="card-link"
+            >
                 ↗
             </a>
         </div>
-
         <div class="rating-display">
-            <span class="rating-number">1842</span>
-            <span class="rating-label">Current Rating</span>
+
+            <span class="rating-number">
+                {{ codeforces_stats.rating }}
+            </span>
+
+            <span class="rating-label">
+                Current Rating · {{ codeforces_stats.rank|title }}
+            </span>
+
         </div>
+
 
         <div class="atcoder-stats">
 
             <div>
-                <span class="stat-value">1921</span>
-                <span class="stat-label">Peak Rating</span>
+
+                <span class="stat-value">
+                    {{ codeforces_stats.highest_rating }}
+                </span>
+
+                <span class="stat-label">
+                    Peak Rating
+                </span>
+
             </div>
 
+
             <div>
-                <span class="stat-value">#2,341</span>
-                <span class="stat-label">Global Rank</span>
+
+                <span class="stat-value">
+                    {{ "{:,}".format(codeforces_stats.solved) }}
+                </span>
+
+                <span class="stat-label">
+                    Problems Solved
+                </span>
+
             </div>
 
         </div>
 
     </div>
-
-
 
 
     <!-- Currently Based In -->

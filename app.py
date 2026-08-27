@@ -14,6 +14,7 @@ from app.services.analytics import (
     get_user_time,
 )
 from app.services.leetcode import get_leetcode_stats
+from app.services.codeforces import get_codeforces_stats
 
 app = Flask(__name__)
 
@@ -53,13 +54,16 @@ def home():
     total_clicks = get_total_clicks()
 
     leetcode_stats = get_leetcode_stats()
+    codeforces_stats = get_codeforces_stats()
+
 
     return render_template(
         "index.html",
         recent_commits=recent_commits,
         total_views=total_views,
         total_clicks=total_clicks,
-        leetcode_stats=leetcode_stats
+        leetcode_stats=leetcode_stats,
+        codeforces_stats=codeforces_stats
     )
 
 

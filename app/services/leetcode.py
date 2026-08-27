@@ -71,6 +71,22 @@ query getUserStats($username: String!) {
 
     }
 
+
+    userContestRankingHistory(username: $username) {
+
+        attended
+
+        rating
+
+        contest {
+
+            title
+            startTime
+
+        }
+
+    }
+
 }
 """
 
@@ -134,10 +150,98 @@ def fetch_leetcode_data():
 
 
 # =========================
+# BUILD CONTEST HISTORY
+# =========================
+
+def build_contest_history(
+    history
+):
+
+    contests = []
+
+
+    if not history:
+
+        return contests
+
+
+    for contest in history:
+
+        if not contest.get(
+            "attended"
+        ):
+
+            continue
+
+
+        contest_info = contest.get(
+            "contest"
+        )
+
+
+        if not contest_info:
+
+            continue
+
+
+        title = contest_info.get(
+            "title"
+        )
+
+
+        start_time = contest_info.get(
+            "startTime"
+        )
+
+
+        rating = contest.get(
+            "rating"
+        )
+
+
+        if (
+            title is None
+            or
+            start_time is None
+            or
+            rating is None
+        ):
+
+            continue
+
+
+        # LeetCode returns the contest
+        # start time as a Unix timestamp.
+
+        date = datetime.fromtimestamp(
+            int(start_time)
+        ).isoformat()
+
+
+        contests.append({
+
+            "contest":
+                title,
+
+            "rating":
+                round(rating),
+
+            "date":
+                date,
+
+        })
+
+
+    return contests
+
+
+# =========================
 # FORMAT DATA
 # =========================
 
-def format_leetcode_data(data):
+def format_leetcode_data(
+    data
+):
 
     user = data["matchedUser"]
 
@@ -156,7 +260,10 @@ def format_leetcode_data(data):
 
     for difficulty in submit_stats:
 
-        if difficulty["difficulty"] == "All":
+        if (
+            difficulty["difficulty"]
+            == "All"
+        ):
 
             solved = difficulty["count"]
 
@@ -176,7 +283,7 @@ def format_leetcode_data(data):
 
 
     # =========================
-    # LAST 30 DAYS HEATMAP
+    # LAST 60 DAYS HEATMAP
     # =========================
 
     submissions_by_date = {}
@@ -202,10 +309,15 @@ def format_leetcode_data(data):
     today = datetime.now().date()
 
 
-    for days_ago in range(59, -1, -1):
+    for days_ago in range(
+        59,
+        -1,
+        -1
+    ):
 
         current_date = (
-            today - timedelta(
+            today
+            - timedelta(
                 days=days_ago
             )
         )
@@ -277,6 +389,22 @@ def format_leetcode_data(data):
 
 
     # =========================
+    # CONTEST HISTORY
+    # =========================
+
+    contest_history = (
+        data.get(
+            "userContestRankingHistory"
+        )
+    )
+
+
+    history = build_contest_history(
+        contest_history
+    )
+
+
+    # =========================
     # RETURN
     # =========================
 
@@ -316,6 +444,10 @@ def format_leetcode_data(data):
         "total_active_days":
             calendar["totalActiveDays"],
 
+
+        "history":
+            history,
+
     }
 
 
@@ -335,7 +467,8 @@ def get_leetcode_stats():
     if (
         _cache["data"] is not None
         and
-        current_time - _cache["timestamp"]
+        current_time
+        - _cache["timestamp"]
         < CACHE_DURATION
     ):
 
@@ -358,7 +491,9 @@ def get_leetcode_stats():
         )
 
 
-        _cache["data"] = formatted_data
+        _cache["data"] = (
+            formatted_data
+        )
 
         _cache["timestamp"] = (
             current_time
@@ -377,7 +512,7 @@ def get_leetcode_stats():
 
 
         # =========================
-        # FALL BACK TO STALE CACHE
+        # FALL BACK TO CACHE
         # =========================
 
         if _cache["data"] is not None:
